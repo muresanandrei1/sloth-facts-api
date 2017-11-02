@@ -5,10 +5,10 @@ class FactController < ApplicationController
     @fact = Fact.order("RANDOM()").limit(1)
     json_resposne(@fact)
   end
-
+  
   def create
     @fact = Fact.create!(fact_params);
-    json_resposne(@fact, :created)
+    json_resposne(@fact)
   end
 
   def show
