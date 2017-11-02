@@ -3,7 +3,8 @@ class FactController < ApplicationController
 
   def index
     @fact = Fact.order("RANDOM()").limit(1)
-    json_resposne(@fact)
+    x = @fact[0].fact
+    json_resposne(x)
   end
   
   def create
